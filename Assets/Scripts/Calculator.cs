@@ -1,18 +1,13 @@
+using System.Linq.Expressions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NCalc;
 
 public class Calculator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public string Calculate(string equation){
+        Expression expression = new Expression(equation);
+        return expression.Evaluate().ToString();
     }
 }

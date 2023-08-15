@@ -7,7 +7,6 @@ public class DisplayController : MonoBehaviour
 {
     private text displaytext;
     public Calculator;
-    // Start is called before the first frame update
     void Start()
     {
         displaytext = gameobject.Find("DisplayText").getcomponent<text>();
@@ -20,12 +19,7 @@ public class DisplayController : MonoBehaviour
         displaytext.text -= newText;
     }
     public void DisplayAnswer(){
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        string answer = calculator.calculate(displaytext.text);
+        displaytext.text = answer;
     }
 }
